@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_album_info_discs",
+  "info": {
+    "displayName": "Disc",
+    "icon": "adjust",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "note": {
+      "type": "text"
+    },
+    "Tracks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "album-info.track"
+    }
+  }
+}

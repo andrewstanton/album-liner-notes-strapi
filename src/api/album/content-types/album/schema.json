@@ -1,0 +1,69 @@
+{
+  "kind": "collectionType",
+  "collectionName": "albums",
+  "info": {
+    "singularName": "album",
+    "pluralName": "albums",
+    "displayName": "Album",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "recording_company": {
+      "type": "string"
+    },
+    "publishing_company": {
+      "type": "string"
+    },
+    "bio": {
+      "type": "richtext"
+    },
+    "liner_notes": {
+      "type": "richtext"
+    },
+    "thank_yous": {
+      "type": "richtext"
+    },
+    "release_date": {
+      "type": "date"
+    },
+    "itunes_url": {
+      "type": "string",
+      "regex": "https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)"
+    },
+    "amazon_url": {
+      "type": "string",
+      "regex": "https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)"
+    },
+    "artists": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::artist.artist",
+      "mappedBy": "albums"
+    },
+    "bands": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::band.band",
+      "mappedBy": "albums"
+    },
+    "Disc": {
+      "type": "component",
+      "repeatable": true,
+      "component": "album-info.disc"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "inversedBy": "albums"
+    }
+  }
+}

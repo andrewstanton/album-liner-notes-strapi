@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_album_info_tracks",
+  "info": {
+    "displayName": "Track",
+    "icon": "address-card"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "note": {
+      "type": "text"
+    },
+    "time_length": {
+      "type": "string"
+    }
+  }
+}
